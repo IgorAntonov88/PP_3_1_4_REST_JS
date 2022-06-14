@@ -133,8 +133,8 @@ let getDataOfCurrentUser = (id) => {
         .then(dataUser => {
             let user = {
                 id: dataUser.id,
-                username: dataUser.name,
-                lastname: dataUser.lastName,
+                username: dataUser.username,
+                lastname: dataUser.lastname,
                 age: dataUser.age,
                 email: dataUser.email,
                 password: dataUser.password,
@@ -227,6 +227,7 @@ allUsersTable.addEventListener("click", e => {
     const editUsersLastName = document.getElementById("edit-lastName");
     const editUsersAge = document.getElementById("edit-age");
     const editUsersEmail = document.getElementById("edit-email");
+    const editUsersPassword = document.getElementById("edit-password");
 
     if (editButtonIsPressed) {
         let currentUserId = e.target.dataset.id;
@@ -244,6 +245,7 @@ allUsersTable.addEventListener("click", e => {
                 editUsersLastName.value = user.lastname;
                 editUsersAge.value = user.age;
                 editUsersEmail.value = user.email;
+                editUsersPassword.value = user.password;
 
                 let editRoles = user.roles.map(i => i.role.name)
                 editRoles.forEach(
@@ -266,6 +268,7 @@ allUsersTable.addEventListener("click", e => {
                 lastname: editUsersLastName.value,
                 age: editUsersAge.value,
                 email: editUsersEmail.value,
+                password: editUsersPassword.value,
                 roles: getRolesFromEditUserForm()
             }
             fetch(`${requestURL}/${currentUserId}`, {
