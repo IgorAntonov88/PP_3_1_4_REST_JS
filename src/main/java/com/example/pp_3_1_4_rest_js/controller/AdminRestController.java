@@ -6,7 +6,6 @@ import com.example.pp_3_1_4_rest_js.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -14,12 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/admin")
 public class AdminRestController {
-
     private final UserService userService;
-
     @GetMapping()
-    public ResponseEntity<List<User>> findAllUsers () {
-        return (ResponseEntity<List<User>>) ResponseEntity.ok(userService.findAll());
+    public List<User> findAllUsers () {
+        return userService.findAll();
     }
     @GetMapping("/{id}")
     public User findUser (@PathVariable Long id) {

@@ -2,7 +2,6 @@ package com.example.pp_3_1_4_rest_js.model;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
-
 import javax.persistence.*;
 import java.util.Set;
 

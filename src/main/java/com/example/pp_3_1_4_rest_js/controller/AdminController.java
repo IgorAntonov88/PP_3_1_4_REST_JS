@@ -7,10 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.security.Principal;
-
 
 @Controller
 @RequestMapping("/admin")
@@ -18,7 +15,6 @@ import java.security.Principal;
 public class AdminController {
     private final UserService userService;
     private final RoleService roleService;
-
     @GetMapping()
     public String findAll(Principal principal, Model model) {
         model.addAttribute("users", userService.findAll());
