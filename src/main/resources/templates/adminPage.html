@@ -43,18 +43,21 @@
       <h2>Admin panel</h2>
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#user_table">Users table</a>
+          <a class="nav-link active" data-toggle="tab" href="#main"
+             id="horizontal_navigation-users_table"> Users table</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#add_user">New User</a>
+          <a class="nav-link" data-toggle="tab" href=#add_new_user
+             id="horizontal_navigation-new_user">New User</a>
         </li>
       </ul>
 
       <!-- Панели навигации -->
       <div class="tab-content">
 
-        <!-- Таблица юзеров -->
-        <div class="tab-pane container-fluid active" id="user_table">
+<!-- Таблица юзеров -->
+        <div class="tab-pane container-fluid active" id="main">
           <div class="row">
             <div class="col border bg-light">
               <p><h6>All users</h6>
@@ -75,23 +78,13 @@
                   <th>Delete</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr th:each="user : ${users}">
-                  <td th:text="${user.id}"></td>
-                  <td th:text="${user.username}"></td>
-                  <td th:text="${user.lastname}"></td>
-                  <td th:text="${user.age}"></td>
-                  <td th:text="${user.email}"></td>
-                  <td><a th:each="role:*{user.roles}" th:text="${role.name.substring(5).concat(' ')}"></a></td>
+                <tbody class="all-users-table">
+                </tbody>
+<!-- Таблица юзеров -->
 
-                  <td>
-                    <!-- Кнопка редактирования -->
-                    <button type="button" class="btn btn-info" data-toggle="modal"
-                            th:data-target="${'#edit' + user.id}">Edit
-                    </button>
 
                     <!-- Модальное окно редактирования юзера -->
-                    <div class="modal" th:id="${'edit' + user.id}">
+                    <div class="modal" id="modal-edit">
                       <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -168,11 +161,7 @@
                     </div>
                   </td>
 
-                  <td>
-                    <!-- Кнопка удаления -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                            th:data-target="${'#delete' + user.id}">Delete
-                    </button>
+
 
                     <!-- Модальное окно удаления юзера -->
                     <div class="modal" th:id="${'delete' + user.id}">
@@ -239,9 +228,9 @@
                         </div>
                       </div>
                     </div>
-                  </td>
+
                 </tr>
-                </tbody>
+
               </table>
             </div>
           </div>
@@ -341,4 +330,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="/static/admin.js"></script>
 </html>
