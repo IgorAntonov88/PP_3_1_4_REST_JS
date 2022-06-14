@@ -1,13 +1,8 @@
 const requestURL = 'http://localhost:8080/api/admin';
 
 const usersTableNavLink = document.getElementById("horizontal_navigation-users_table");
-const newUserNawLink = document.getElementById("horizontal_navigation-new_user");
 const allUsersTable = document.querySelector(".all-users-table");
 
-
-//------------- Таблица со всеми юзерами -------------//
-
-// Генерация кода для заполнения таблицы данными обо всех юзерах
 const renderUsers = (users) => {
     if (users.length > 0) {
         let temp = '';
@@ -31,7 +26,6 @@ const renderUsers = (users) => {
     }
 }
 
-// Получение данных всех пользователей с помощью fetch и заполнение таблицы с помощью renderUsers
 function getAllUsers () {
     fetch(requestURL, {
         method: 'GET',
@@ -44,25 +38,20 @@ function getAllUsers () {
             renderUsers(data);
         })
 }
-
-// Вызов функции
 getAllUsers();
 
-//------------- Добавление нового юзера -------------//
 
-//Форма добавления юзера
 const addUserForm = document.querySelector(".add-user-form");
-// Поля формы добавления нового юзера
+
 const addUserFormName = document.getElementById("add-user-form-name");
 const addUserFormLastName = document.getElementById("add-user-form-last-name");
 const addUserFormAge = document.getElementById("add-user-form-age");
 const addUserFormEmail = document.getElementById("add-user-form-email");
 const addUserFormPassword = document.getElementById("add-user-form-password");
 const addUserFormRoles = document.getElementById("add-user-form-roles");
-//Кнопка submit формы нового юзера
+
 const addButtonSubmit = document.getElementById("add-btn-submit");
 
-//Генерация ролей
 function getRolesFromAddUserForm() {
     let roles = Array.from(addUserFormRoles.selectedOptions)
         .map(option => option.value);
@@ -106,8 +95,6 @@ addUserForm.addEventListener("submit", (e) => {
         });
 })
 
-//------------- Удаление и изменение юзеров -------------//
-
 const modalEditExitBtn = document.getElementById("exit_btn-modal-edit");
 const modalEditCloseBtn = document.getElementById("close_btn-modal-edit");
 const modalEditSubmitBtn = document.getElementById("submit_btn-modal-edit");
@@ -120,7 +107,6 @@ const deleteRoleUserOption = document.getElementById("delete-role_user");
 const modalDeleteSubmitBtn = document.getElementById("submit_btn-modal-delete");
 const modalDeleteExitBtn = document.getElementById("exit_btn-modal-delete");
 const modalDeleteCloseBtn = document.getElementById("close_btn-modal-delete");
-
 
 let getDataOfCurrentUser = (id) => {
     return fetch(requestURL + "/" + id, {
@@ -165,13 +151,13 @@ function getRolesFromEditUserForm() {
     return rolesToEdit;
 }
 
-//Отслеживание нажатий по кнопкам Edit и Delete в таблице юзеров
+//Отслеживание нажатий по кнопкам Edit и Delete
 allUsersTable.addEventListener("click", e => {
     e.preventDefault();
     let delButtonIsPressed = e.target.id === 'btn-delete-modal-call';
     let editButtonIsPressed = e.target.id === 'btn-edit-modal-call';
 
-//------------- Удаление юзеров -------------//
+
 
     const deleteUsersId = document.getElementById("delete-id")
     const deleteUsersName = document.getElementById("delete-name")
@@ -219,8 +205,6 @@ allUsersTable.addEventListener("click", e => {
             location.reload();
         })
     }
-
-//------------- Изменение юзеров -------------//
 
     const editUsersId = document.getElementById("edit-id");
     const editUsersName = document.getElementById("edit-name");

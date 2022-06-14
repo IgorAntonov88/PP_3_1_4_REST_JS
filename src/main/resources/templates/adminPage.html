@@ -39,12 +39,8 @@
                     </ul>
                 </div>
 
-            <div class="col-10 tab-content pt-0 px-0">
-
-                <div class="pt-2 px-0 tab-pane fade show active" style="background-color: #eeeeee" id="admin_panel">
-                    <div class="container-fluid justify-content-end">
+            <div class="col-10 tab-content pt-0 px-0"><br><br><br>
                         <h2>Admin panel</h2>
-
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#main"
@@ -82,48 +78,43 @@
                                                 <form>
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-
-                                                            <!--Заголовок-->
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title">Edit user</h5>
                                                                 <button id="exit_btn-modal-edit" type="button"
-                                                                        class="close"
-                                                                        data-dismiss="modal"
-                                                                        aria-label="Close">
+                                                                        class="close" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>
-                                                            <!--Тело-->
                                                             <div class="modal-body">
                                                                 <div class="container-fluid" align="center">
                                                                     <div class="form-group col-7" align="center">
-                                                                        <label class="col-form-label"for="edit-id">ID</label>
-                                                                        <input class="form-control edited-users-id"type="number" disabled id="edit-id"
+                                                                        <strong><label class="col-form-label" for="edit-id">ID</label></strong>
+                                                                        <input class="form-control edited-users-id" type="number" disabled id="edit-id"
                                                                                data-target="id"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label" for="edit-name">First name</label>
+                                                                        <strong><label class="col-form-label" for="edit-name">First name</label></strong>
                                                                         <input class="form-control" type="text" id="edit-name"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label" for="edit-lastName">Last name</label>
+                                                                        <strong><label class="col-form-label" for="edit-lastName">Last name</label></strong>
                                                                         <input class="form-control" type="text" id="edit-lastName"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label"  for="edit-age">Age</label>
+                                                                        <strong><label class="col-form-label"  for="edit-age">Age</label></strong>
                                                                         <input class="form-control" type="number"  id="edit-age"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label" for="edit-email">Email</label>
+                                                                        <strong><label class="col-form-label" for="edit-email">Email</label></strong>
                                                                         <input class="form-control" type="text" id="edit-email"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label" for="edit-password">Password</label>
+                                                                        <strong><label class="col-form-label" for="edit-password">Password</label></strong>
                                                                         <input class="form-control" type="password" id="edit-password"/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label"
-                                                                               for="edit-rolesSelect">Role</label>
+                                                                        <strong><label class="col-form-label"
+                                                                               for="edit-rolesSelect">Role</label></strong>
                                                                         <select id="edit-rolesSelect"
                                                                                 class="form-control" size="2" multiple
                                                                                 name="roles" required="required">
@@ -156,59 +147,41 @@
                                                 <form id="modal-delete_form">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-
-                                                            <!--Заголовок-->
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title">Удалить пользователя</h5>
+                                                                <h5 class="modal-title">Delete user</h5>
                                                                 <button id="exit_btn-modal-delete" type="button"
-                                                                        class="close"
-                                                                        data-dismiss="modal"
-                                                                        aria-label="Close">
+                                                                        class="close" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>
-                                                            <!--Тело-->
                                                             <div class="modal-body">
                                                                 <div class="container-fluid" align="center">
                                                                     <div class="form-group col-7" align="center">
-                                                                        <label class="col-form-label"
-                                                                               for="delete-id">ID</label>
-                                                                        <input class="form-control" type="text"
-                                                                               id="delete-id" disabled/>
+                                                                        <strong><label class="col-form-label" for="delete-id">ID</label></strong>
+                                                                        <input class="form-control" type="text" id="delete-id" readonly/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label" for="delete-name">Имя</label>
-                                                                        <input class="form-control" type="text"
-                                                                               id="delete-name" disabled/>
+                                                                        <strong><label class="col-form-label" for="delete-name">First name</label></strong>
+                                                                        <input class="form-control" type="text" id="delete-name" readonly/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label"
-                                                                               for="delete-lastName">Фамилия</label>
-                                                                        <input class="form-control" type="text"
-                                                                               id="delete-lastName" disabled/>
+                                                                        <strong><label class="col-form-label" for="delete-lastName">Last name</label></strong>
+                                                                        <input class="form-control" type="text" id="delete-lastName" readonly/>
                                                                     </div>
                                                                     <div class="form-group col-7">
-                                                                        <label class="col-form-label"
-                                                                               for="delete-age">Возраст</label>
-                                                                        <input class="form-control" type="text"
-                                                                               id="delete-age" disabled/>
+                                                                        <strong><label class="col-form-label" for="delete-age">Age</label></strong>
+                                                                        <input class="form-control" type="text" id="delete-age" readonly/>
                                                                         <div class="form-group col-14">
-                                                                            <label class="col-form-label"
-                                                                                   for="delete-email">Электронная почта</label>
-                                                                            <input class="form-control" type="text"
-                                                                                   id="delete-email" disabled/>
+                                                                            <strong><label class="col-form-label" for="delete-email">Email</label></strong>
+                                                                            <input class="form-control" type="text" id="delete-email" readonly/>
                                                                         </div>
                                                                         <div class="form-group col-14">
-                                                                            <label class="col-form-label"
-                                                                                   for="delete-roles">Роль</label>
+                                                                            <strong><label class="col-form-label" for="delete-roles">Role</label></strong>
                                                                             <select id="delete-roles" class="form-control"
-                                                                                    size="2"
-                                                                                    multiple name="roles" disabled>
-                                                                                <option id="delete-role_admin" value="1">
-                                                                                    Admin
+                                                                                    size="2" multiple name="roles" readonly>
+                                                                                <option id="delete-role_admin" value="1">ADMIN
                                                                                 </option>
-                                                                                <option id="delete-role_user" value="2">
-                                                                                    User
+                                                                                <option id="delete-role_user" value="2">USER
                                                                                 </option>
                                                                             </select>
                                                                         </div>
@@ -216,11 +189,10 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button id="close_btn-modal-delete" type="button"
-                                                                            class="btn btn-secondary" data-dismiss="modal"> Закрыть
+                                                                            class="btn btn-secondary" data-dismiss="modal">Close
                                                                     </button>
                                                                     <button id="submit_btn-modal-delete" type="submit"
-                                                                            class="btn btn-danger"
-                                                                            data-target="#DeleteForm"> Удалить
+                                                                            class="btn btn-danger" data-target="#DeleteForm">Delete
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -228,12 +200,11 @@
                                                 </form>
                                             </div>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
 
-                            <!--                            Форма для добавления юзера-->
+                            <!--Форма для добавления юзера-->
                             <div class="tab-pane fade" id="add_new_user">
                                 <div class="card">
                                     <h5 class="card-header">Добавление нового пользователя</h5>
